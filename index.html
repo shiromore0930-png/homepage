@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHIRO MORE（シロモア）｜犬の歯みがき出張レッスン</title>
+<meta name="description" content="現役歯科衛生士のちゃま先生による、愛犬のための出張歯みがきレッスン。東京・千葉・埼玉・神奈川対応。初回モニター6,600円（税込）。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --mint: #fff0e2;
+    --mint-mid: #f5b880;
+    --mint-deep: #e07828;
+    --mint-dark: #c05c08;
+    --cream: #faf8f4;
+    --warm-white: #ffffff;
+    --text: #2d1a08;
+    --text-mid: #5a3a18;
+    --text-light: #9a7040;
+    --accent: #e85500;
+    --accent-light: #fff3e8;
+    --border: rgba(224, 120, 40, 0.2);
+    --radius: 20px;
+    --radius-sm: 10px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    overflow-x: hidden;
+  }
+
+  /* ====== HEADER / NAV ====== */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(250, 248, 244, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    text-decoration: none;
+  }
+
+  .logo-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--mint-dark);
+    letter-spacing: 0.12em;
+  }
+
+  .logo-ja {
+    font-size: 0.62rem;
+    color: var(--text-light);
+    letter-spacing: 0.08em;
+  }
+
+  nav {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.2s;
+  }
+
+  nav a:hover { color: var(--mint-dark); }
+
+  .nav-cta {
+    background: var(--mint-dark);
+    color: white !important;
+    padding: 0.45rem 1.1rem;
+    border-radius: 50px;
+    font-size: 0.78rem !important;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: background 0.2s, transform 0.1s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--mint-deep) !important;
+    color: white !important;
+    transform: translateY(-1px);
+  }
+
+  /* ====== HERO ====== */
+  .hero {
+    min-height: 100vh;
+    padding: 100px 2rem 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(160deg, #fff0e2 0%, #faf8f4 50%, #fff9f0 100%);
+  }
+
+  .hero-bg-circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    pointer-events: none;
+  }
+
+  .hero-bg-circle.c1 {
+    width: 600px; height: 600px;
+    background: var(--mint-mid);
+    top: -100px; right: -120px;
+  }
+
+  .hero-bg-circle.c2 {
+    width: 300px; height: 300px;
+    background: var(--accent);
+    bottom: -50px; left: -80px;
+  }
+
+  .hero-inner {
+    max-width: 960px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid rgba(245, 166, 35, 0.3);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 0.35rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1.4rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 1.4rem;
+  }
+
+  .hero h1 em {
+    font-style: normal;
+    color: var(--mint-dark);
+    position: relative;
+  }
+
+  .hero h1 em::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 3px;
+    background: var(--mint-mid);
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--text-mid);
+    margin-bottom: 2rem;
+    line-height: 1.9;
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin-bottom: 2.2rem;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+
+  .badge-dot {
+    width: 7px; height: 7px;
+    background: var(--mint-deep);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--mint-dark);
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 6px 20px rgba(29, 122, 94, 0.25);
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(29, 122, 94, 0.32);
+  }
+
+  .hero-cta-arrow {
+    font-size: 1.1rem;
+    transition: transform 0.2s;
+  }
+
+  .hero-cta:hover .hero-cta-arrow { transform: translateX(3px); }
+
+  /* Hero image placeholder */
+  .hero-visual {
+    position: relative;
+  }
+
+  .hero-img-card {
+    background: white;
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .hero-img-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .hero-float-card {
+    position: absolute;
+    bottom: -16px;
+    right: -16px;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 0.9rem 1.2rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    font-size: 0.78rem;
+  }
+
+  .hero-float-number {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--mint-dark);
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .hero-float-label { color: var(--text-light); font-size: 0.7rem; }
+
+  /* ====== SECTION WRAPPER ====== */
+  section { padding: 80px 2rem; }
+
+  .section-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .section-tag {
+    display: inline-block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: var(--mint-deep);
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 900;
+    line-height: 1.35;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .section-lead {
+    font-size: 1rem;
+    color: var(--text-mid);
+    max-width: 540px;
+    line-height: 1.9;
+    margin-bottom: 3rem;
+  }
+
+  /* ====== WHY / PROBLEM ====== */
+  #why { background: white; }
+
+  .problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+  }
+
+  .problem-card {
+    background: var(--mint);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.4rem;
+    border: 1px solid var(--border);
+  }
+
+  .problem-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    line-height: 1;
+  }
+
+  .problem-title {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+
+  .problem-desc {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+  }
+
+  .callout-box {
+    background: var(--mint-dark);
+    color: white;
+    border-radius: var(--radius);
+    padding: 2rem 2.4rem;
+  }
+
+  .callout-text h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+  }
+
+  .callout-text p {
+    font-size: 0.88rem;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.8;
+  }
+
+  /* ====== SERVICE ====== */
+  #service { background: var(--cream); }
+
+  .service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .service-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.4rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(74, 168, 138, 0.12);
+  }
+
+  .service-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.75rem;
+    color: var(--mint-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.7rem;
+  }
+
+  .service-icon {
+    margin-bottom: 0.9rem;
+    color: var(--mint-deep);
+    display: block;
+  }
+
+  .service-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .service-desc {
+    font-size: 0.8rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* ====== PRICING / MONITOR ====== */
+  #pricing { background: white; }
+
+  .pricing-main {
+    background: linear-gradient(135deg, #fff0e2 0%, #fde8d0 100%);
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 3rem 2.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-label {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    margin-bottom: 1.2rem;
+  }
+
+  .pricing-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 600;
+    color: var(--text);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .pricing-price span {
+    font-size: 1.2rem;
+    color: var(--text-mid);
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 400;
+  }
+
+  .pricing-note {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    margin-bottom: 0.6rem;
+  }
+
+  .pricing-gift {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 0.4rem 0.9rem;
+    font-size: 0.78rem;
+    color: var(--mint-dark);
+    font-weight: 700;
+    margin-top: 0.6rem;
+  }
+
+  .pricing-details h4 {
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .detail-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .detail-list li {
+    display: flex;
+    gap: 0.7rem;
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    align-items: flex-start;
+  }
+
+  .check {
+    color: var(--mint-deep);
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .area-box {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .area-icon { font-size: 1.5rem; flex-shrink: 0; }
+
+  .area-box h4 {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .area-box p {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* ====== PROFILE ====== */
+  #profile { background: var(--cream); }
+
+  .profile-card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 28px;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .profile-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--mint-mid);
+    margin: 0 auto;
+  }
+
+  .profile-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .profile-name {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .profile-title {
+    font-size: 0.85rem;
+    color: var(--mint-dark);
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.04em;
+  }
+
+  .profile-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.4rem;
+  }
+
+  .profile-tag {
+    background: var(--mint);
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.75rem;
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+
+  .profile-bio {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.9;
+  }
+
+  /* ====== FLOW ====== */
+  #flow { background: white; }
+
+  .flow-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 1.4rem;
+    padding-bottom: 2rem;
+    position: relative;
+  }
+
+  .flow-step::before {
+    content: '';
+    position: absolute;
+    left: 29px;
+    top: 52px;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+  }
+
+  .flow-step:last-child::before { display: none; }
+
+  .step-circle {
+    width: 58px; height: 58px;
+    background: var(--mint-dark);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.82rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+
+  .step-body { padding-top: 0.7rem; }
+
+  .step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.72rem;
+    color: var(--mint-deep);
+    letter-spacing: 0.15em;
+    margin-bottom: 0.3rem;
+  }
+
+  .step-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  .step-desc {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+  }
+
+  /* ====== CTA / LINE ====== */
+  #contact {
+    background: var(--mint-dark);
+    padding: 80px 2rem;
+    text-align: center;
+  }
+
+  #contact .section-tag { color: rgba(255,255,255,0.6); }
+  #contact .section-title { color: white; }
+  #contact .section-lead { color: rgba(255,255,255,0.8); margin: 0 auto 2.5rem; }
+
+  .line-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: #06C755;
+    color: white;
+    text-decoration: none;
+    padding: 1.1rem 2.5rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  }
+
+  .line-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+  }
+
+  .line-icon { font-size: 1.4rem; }
+
+  .line-sub {
+    margin-top: 1.2rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .instagram-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    transition: color 0.2s;
+  }
+
+  .instagram-link:hover { color: white; }
+
+  /* ====== FOOTER ====== */
+  footer {
+    background: var(--text);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 2.5rem 2rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* ====== HAMBURGER / MOBILE NAV ====== */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  .mobile-nav {
+    display: none;
+    position: fixed;
+    inset: 64px 0 0;
+    background: rgba(250,248,244,0.97);
+    backdrop-filter: blur(12px);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+
+  .mobile-nav.open { display: flex; }
+
+  .mobile-nav a {
+    font-size: 1.1rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    width: 80%;
+    text-align: center;
+  }
+
+  .mobile-nav .nav-cta {
+    border: none;
+    background: var(--mint-dark);
+    color: white !important;
+    width: auto;
+    padding: 0.8rem 2.5rem;
+  }
+
+  /* ====== STORY / MESSAGE ====== */
+  #story { background: white; }
+
+  .story-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .story-quote {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--mint-dark);
+    line-height: 1.5;
+    margin-bottom: 1.8rem;
+    padding-left: 1.2rem;
+    border-left: 4px solid var(--mint-mid);
+  }
+
+  .story-body {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 2;
+  }
+
+  .story-body p + p { margin-top: 1.2rem; }
+
+  .qual-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .qual-item {
+    background: var(--mint);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 1rem 1.2rem;
+  }
+
+  .qual-name {
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--text);
+    margin-bottom: 0.3rem;
+  }
+
+  .qual-desc {
+    font-size: 0.78rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+  }
+
+  /* ====== FOOTER ====== */
+  .footer-inner { max-width: 960px; margin: 0 auto; }
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 0.3rem;
+    letter-spacing: 0.12em;
+  }
+  .footer-tagline { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.4rem; }
+  .footer-area { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
+  .footer-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-bottom: 1.8rem;
+  }
+  .footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    font-size: 0.82rem;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: white; }
+  .footer-copy { font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+  /* ====== RESPONSIVE ====== */
+  @media (max-width: 760px) {
+    nav { display: none; }
+    .hamburger { display: flex; }
+
+    .hero-inner {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .hero-badges { justify-content: center; }
+
+    .hero-visual { order: -1; max-width: 280px; margin: 0 auto; }
+
+    .pricing-main {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .profile-card {
+      grid-template-columns: 1fr;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .profile-tags { justify-content: center; }
+
+    .story-layout { grid-template-columns: 1fr; gap: 2rem; }
+
+    section { padding: 60px 1.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <span class="logo-en">SHIRO MORE</span>
+    <span class="logo-ja">シロモア｜犬の歯みがき出張レッスン</span>
+  </a>
+  <nav>
+    <a href="#why">なぜ必要？</a>
+    <a href="#service">サービス</a>
+    <a href="#pricing">料金</a>
+    <a href="#profile">講師について</a>
+    <a href="#contact" class="nav-cta">LINEで予約</a>
+  </nav>
+  <div class="hamburger" id="hamburger" aria-label="メニューを開く">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#why" onclick="closeMobileNav()">なぜ必要？</a>
+  <a href="#service" onclick="closeMobileNav()">サービス</a>
+  <a href="#pricing" onclick="closeMobileNav()">料金・エリア</a>
+  <a href="#profile" onclick="closeMobileNav()">講師について</a>
+  <a href="#contact" class="nav-cta" onclick="closeMobileNav()">LINEで予約する →</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-circle c1"></div>
+  <div class="hero-bg-circle c2"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-tag">DOG DENTAL CARE</div>
+      <h1>
+        愛犬の歯みがき、<br>
+        ちゃんと<em>習ったこと</em><br>
+        ありますか？
+      </h1>
+      <p class="hero-sub">
+        現役歯科衛生士のちゃま先生が<br>
+        ご自宅へ伺い、その子に合った<br>
+        歯みがきを一緒に見つけます。
+      </p>
+      <div class="hero-badges">
+        <span class="badge"><span class="badge-dot"></span>現役歯科衛生士が指導</span>
+        <span class="badge"><span class="badge-dot"></span>出張対応</span>
+        <span class="badge"><span class="badge-dot"></span>1都3県対応</span>
+      </div>
+      <a href="https://lin.ee/XgnyoBb" target="_blank" rel="noopener" class="hero-cta">
+        LINEで予約する
+        <span class="hero-cta-arrow">→</span>
+      </a>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-card">
+        <img src="main1.jpeg" alt="ちゃま先生と愛犬">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="section-inner">
+    <span class="section-tag">The Problem</span>
+    <h2 class="section-title">こんなお悩みありませんか？</h2>
+    <p class="section-lead">なんとなくやってみてるけど、これで合ってるのか不安。しっかり教わる機会って、実はあまりないですよね。</p>
+
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-title">嫌がってうまくできない</div>
+        <p class="problem-desc">歯ブラシを近づけると逃げてしまう。毎回格闘でストレスに…</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-title">これで合ってるのか不安</div>
+        <p class="problem-desc">なんとなくやってみてるけど、正しいやり方がわからない。</p>
+      </div>
+      <div class="problem-card">
+        <div class="problem-title">そもそもちゃんとできてないかも</div>
+        <p class="problem-desc">歯石がついてきた気がする。でも何から始めればいいのか…</p>
+      </div>
+    </div>
+
+    <div class="callout-box">
+      <p style="font-family:'Cormorant Garamond',serif; font-size:0.78rem; letter-spacing:0.2em; color:rgba(255,255,255,0.6); text-transform:uppercase; margin-bottom:0.6rem;">健康はお口から</p>
+      <h3 style="font-size:1.15rem; font-weight:700; margin-bottom:0.7rem; color:white;">歯みがきはやらなくていいものじゃない</h3>
+      <p style="font-size:0.88rem; color:rgba(255,255,255,0.8); line-height:1.8;">歯垢が歯石に変わるのはわずか3〜5日。歯周病菌の毒素は血流にのって心臓・肝臓・腎臓にも影響します。毎日の歯みがきが、わんちゃんの長生きにつながります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section id="service">
+  <div class="section-inner">
+    <span class="section-tag">Our Service</span>
+    <h2 class="section-title">レッスン内容</h2>
+    <p class="section-lead">歯みがきが初めての子も、うまくできなくて悩んでいる子も大歓迎。お口チェックをしながら、その子に合ったやり方を一緒に見つけます。</p>
+
+    <div class="service-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <div class="service-name">お口の状態チェック</div>
+        <p class="service-desc">歯石の付き具合や歯肉の状態を確認し、お口の現状を把握します。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <div class="service-name">わんちゃんのお口にまつわる座学</div>
+        <p class="service-desc">なぜ歯みがきが必要か、正しい知識をわかりやすくお伝えします。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <div class="service-name">歯みがきレクチャー</div>
+        <p class="service-desc">その子の性格・口の大きさに合わせた磨き方を実践形式で習得。</p>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <div class="service-name">仕上げケア（電動ブラシ）</div>
+        <p class="service-desc">可能な子には、レッスンの最後にちゃま先生が電動ブラシで清掃いたします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="section-inner">
+    <span class="section-tag">Pricing</span>
+    <h2 class="section-title">料金・出張エリア</h2>
+    <p class="section-lead">初回レッスンから、継続してわんちゃんのお口ケアをサポートします。</p>
+
+    <div class="pricing-main">
+      <div>
+        <div class="pricing-label">初回レッスン</div>
+        <div class="pricing-price">16,500<span>円（税込）</span></div>
+        <p class="pricing-note">所要時間：120〜180分<br>お支払い：現金 または PayPay</p>
+      </div>
+      <div class="pricing-details">
+        <h4>含まれるもの</h4>
+        <ul class="detail-list">
+          <li><span class="check">✓</span><span>お口の状態チェック</span></li>
+          <li><span class="check">✓</span><span>ワンちゃんのお口座学</span></li>
+          <li><span class="check">✓</span><span>歯みがきレクチャー（実践）</span></li>
+          <li><span class="check">✓</span><span>仕上げケア（電動ブラシ）</span></li>
+          <li><span class="check">✓</span><span>お口に合った歯ブラシの選定</span></li>
+        </ul>
+        <p style="font-size:0.75rem; color:var(--text-light); margin-top:1rem; line-height:1.7;">
+          ※ 交通費・駐車場代は別途。詳細はLINEでご相談ください。<br>
+          ※ 強い噛みつき癖・攻撃性がある場合はご案内が難しい場合があります。
+        </p>
+      </div>
+    </div>
+
+    <div class="pricing-main" style="margin-bottom:1.5rem;">
+      <div>
+        <div class="pricing-label" style="background:var(--mint-deep);">2回目以降レッスン</div>
+        <div class="pricing-price">8,800<span>円（税込）</span></div>
+        <p class="pricing-note">所要時間：60〜90分<br>お支払い：現金 または PayPay</p>
+      </div>
+      <div class="pricing-details">
+        <h4>含まれるもの</h4>
+        <ul class="detail-list">
+          <li><span class="check">✓</span><span>お口の状態チェック</span></li>
+          <li><span class="check">✓</span><span>前回の復習・歯みがき実践</span></li>
+          <li><span class="check">✓</span><span>仕上げケア（電動ブラシ）</span></li>
+        </ul>
+        <p style="font-size:0.75rem; color:var(--text-light); margin-top:1rem; line-height:1.7;">
+          ※ 初回レッスン受講済みの方が対象です。<br>
+          ※ 交通費・駐車場代は別途。詳細はLINEでご相談ください。
+        </p>
+      </div>
+    </div>
+
+    <div class="area-box">
+      <div>
+        <h4>出張エリア</h4>
+        <p><strong>東京・千葉・埼玉・神奈川</strong><br>その他のエリアはご相談ください。ご自宅に伺います。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile">
+  <div class="section-inner">
+    <span class="section-tag">About</span>
+    <h2 class="section-title">講師について</h2>
+
+    <div class="profile-card">
+      <div>
+        <div class="profile-img">
+          <img src="prof.JPG" alt="ちゃま先生">
+        </div>
+      </div>
+      <div>
+        <div class="profile-name">ちゃま先生</div>
+        <div class="profile-title">SHIRO MORE（シロモア）代表 ／ 犬の歯みがき先生</div>
+        <div class="profile-tags">
+          <span class="profile-tag">現役歯科衛生士</span>
+          <span class="profile-tag">愛玩動物飼養管理士</span>
+          <span class="profile-tag">ビションフリーゼ多頭飼い</span>
+          <span class="profile-tag">犬の歯みがき専門スクール在学中</span>
+        </div>
+        <p class="profile-bio">
+          現役の歯科衛生士として人の口腔ケアに携わりながら、愛犬のビションフリーゼたちと暮らす中で、犬の歯みがきの大切さに気づきました。<br><br>
+          「歯磨きを当たり前に」。専門知識を活かし、飼い主さんとわんちゃんが一緒に楽しく歯みがきできるよう、全力でサポートします。<br><br>
+          犬の歯みがきについて日々勉強中です。一緒に愛犬の口腔ケアを始めましょう！
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY / MESSAGE -->
+<section id="story">
+  <div class="section-inner">
+    <span class="section-tag">Our Story</span>
+    <h2 class="section-title">なぜ、犬の歯みがきを<br>広めようと決めたのか</h2>
+    <div class="story-layout">
+      <div>
+        <p class="story-quote">「こんなやりかたが<br>あるんだ！」</p>
+        <div class="story-body">
+          <p>歯科衛生士として毎日患者さんの歯を守りながら、自分の愛犬の歯は守れていませんでした。人の口腔ケアを仕事にしているのに、愛犬には毎日歯みがきができていなかった。そのことが、ずっと引っかかっていました。</p>
+          <p>そんなとき、犬の歯みがき専門サロンを初めて訪れました。「毎日やらなきゃいけない、人間と一緒なんだ」「こうやったらいいんだ」——当たり前の事実と正しい方法を目の当たりにして、深く感銘を受けました。</p>
+          <p>SNSには犬の歯みがき情報があふれています。でも、どれが本当に効果的なのか、わからない飼い主さんも多いはず。かつての私がそうでした。</p>
+          <p>あのときの気持ちを、一人でも多くの飼い主さんとわんちゃんへ届けたい。その想いが、SHIRO MORE を始めた理由です。</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-size:0.9rem; font-weight:700; color:var(--text); margin-bottom:1rem; letter-spacing:0.04em;">保有資格・専門性</h3>
+        <div class="qual-list">
+          <div class="qual-item">
+            <div class="qual-name">歯科衛生士免許（国家資格）</div>
+            <div class="qual-desc">人の口腔ケアの専門家として現役で活躍中。歯垢・歯石・歯周病に関する正しい知識をそのまま愛犬のケアに活かします。</div>
+          </div>
+          <div class="qual-item">
+            <div class="qual-name">愛玩動物飼養管理士</div>
+            <div class="qual-desc">動物の適切な飼養管理や健康管理に関する知識を保有。わんちゃんの気持ちに寄り添ったレッスンを心がけています。</div>
+          </div>
+          <div class="qual-item">
+            <div class="qual-name">犬の歯みがき専門スクール在学中</div>
+            <div class="qual-desc">より深い専門知識と技術を日々習得中。最新のケア方法をレッスンに反映しています。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section id="flow">
+  <div class="section-inner">
+    <span class="section-tag">How to Book</span>
+    <h2 class="section-title">予約の流れ</h2>
+    <p class="section-lead">LINEからかんたん3ステップ。「ちょっと聞いてみたい」だけでも大歓迎です。</p>
+
+    <div class="flow-steps">
+      <div class="flow-step">
+        <div class="step-circle">01</div>
+        <div class="step-body">
+          <div class="step-num">STEP 01</div>
+          <div class="step-title">公式LINEから「レッスン希望です」と送る</div>
+          <p class="step-desc">気軽にメッセージしてください。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-circle">02</div>
+        <div class="step-body">
+          <div class="step-num">STEP 02</div>
+          <div class="step-title">簡単なカウンセリングシートに回答</div>
+          <p class="step-desc">愛犬の性格や口の状態など、簡単な質問にお答えください。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-circle">03</div>
+        <div class="step-body">
+          <div class="step-num">STEP 03</div>
+          <div class="step-title">日程調整・ご自宅に訪問</div>
+          <p class="step-desc">都合のよい日時を決めたら、ちゃま先生がご自宅に伺います。</p>
+        </div>
+      </div>
+      <div class="flow-step">
+        <div class="step-circle">04</div>
+        <div class="step-body">
+          <div class="step-num">STEP 04</div>
+          <div class="step-title">レッスンスタート！</div>
+          <p class="step-desc">120〜180分でしっかりお口チェックから歯みがきレクチャーまで。楽しく始めましょう。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / CTA -->
+<section id="contact">
+  <div class="section-inner">
+    <span class="section-tag">Contact</span>
+    <h2 class="section-title" style="color:white;">「これならできそう！」<br>一緒に始めましょう</h2>
+    <p class="section-lead">ご予約・お問い合わせは公式LINEから。ご質問もお気軽にどうぞ。</p>
+    <a href="https://lin.ee/XgnyoBb" target="_blank" rel="noopener" class="line-btn">
+      <span class="line-icon">💬</span>
+      LINEで予約する・問い合わせる
+    </a>
+    <p class="line-sub">「レッスン希望です」とお送りください ／ ご質問もお気軽にどうぞ</p>
+    <div style="margin-top:1.8rem; display:inline-block;">
+      <img src="https://qr-official.line.me/gs/M_959osybb_GW.png?oat_content=qr" alt="LINE QRコード" width="130" height="130" style="border-radius:12px; display:block; margin:0 auto;">
+      <p style="font-size:0.72rem; color:rgba(255,255,255,0.5); margin-top:0.6rem; text-align:center;">カメラでスキャン</p>
+    </div>
+    <a href="https://www.instagram.com/chama_inuhamigaki/" target="_blank" rel="noopener" class="instagram-link">
+      Instagram @chama_inuhamigaki
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">SHIRO MORE</div>
+    <p class="footer-tagline">シロモア｜犬の歯みがき出張レッスン</p>
+    <p class="footer-area">対応エリア：東京・千葉・埼玉・神奈川</p>
+    <div class="footer-links">
+      <a href="https://lin.ee/XgnyoBb" target="_blank" rel="noopener">LINE</a>
+      <a href="https://www.instagram.com/chama_inuhamigaki/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <p class="footer-copy">© 2025 SHIRO MORE（シロモア）</p>
+  </div>
+</footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  let open = false;
+
+  hamburger.addEventListener('click', () => {
+    open = !open;
+    mobileNav.classList.toggle('open', open);
+  });
+
+  function closeMobileNav() {
+    open = false;
+    mobileNav.classList.remove('open');
+  }
+</script>
+</body>
+</html>
