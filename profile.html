@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SHIRO MORE（シロモア）｜ちゃま先生 まとめ</title>
+<meta name="description" content="現役歯科衛生士のちゃま先生による、愛犬のための出張歯みがきサービス「SHIRO MORE（シロモア）」のリンクまとめページ。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --mint: #fff0e2;
+    --mint-mid: #f5b880;
+    --mint-deep: #e07828;
+    --mint-dark: #c05c08;
+    --cream: #faf8f4;
+    --warm-white: #ffffff;
+    --text: #2d1a08;
+    --text-mid: #5a3a18;
+    --text-light: #9a7040;
+    --accent: #e85500;
+    --accent-light: #fff3e8;
+    --border: rgba(224, 120, 40, 0.2);
+    --radius: 16px;
+    --radius-sm: 10px;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    color: var(--text);
+    background: var(--cream);
+    line-height: 1.8;
+    min-height: 100vh;
+  }
+
+  .page {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 48px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* ====== PROFILE HEADER ====== */
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .profile-photo {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--mint-mid);
+  }
+
+  .profile-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--mint-dark);
+    letter-spacing: 0.14em;
+    line-height: 1.1;
+  }
+
+  .profile-name-ja {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    letter-spacing: 0.1em;
+    margin-top: 2px;
+  }
+
+  .profile-bio {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    line-height: 1.8;
+    max-width: 320px;
+  }
+
+  .profile-tag {
+    display: inline-block;
+    background: var(--accent-light);
+    color: var(--accent);
+    border: 1px solid rgba(232, 85, 0, 0.2);
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    padding: 0.28rem 0.9rem;
+    border-radius: 50px;
+  }
+
+  /* ====== SECTION LABEL ====== */
+  .section-label {
+    width: 100%;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-top: 28px;
+    margin-bottom: 10px;
+    padding-left: 4px;
+  }
+
+  /* ====== LINK CARD ====== */
+  .link-card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px 20px;
+    text-decoration: none;
+    color: var(--text);
+    margin-bottom: 10px;
+    transition: transform 0.15s, box-shadow 0.15s, border-color 0.15s;
+  }
+
+  .link-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(192, 92, 8, 0.1);
+    border-color: var(--mint-mid);
+  }
+
+  .link-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--mint);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .link-card-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .link-card-icon.orange { background: var(--accent-light); }
+  .link-card-icon.orange svg { color: var(--accent); }
+
+  .link-card-text {
+    flex: 1;
+  }
+
+  .link-card-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+  }
+
+  .link-card-sub {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+
+  .link-card-arrow {
+    color: var(--text-light);
+    flex-shrink: 0;
+  }
+
+  /* ====== HIGHLIGHT CARD (LINE) ====== */
+  .link-card.highlight {
+    background: linear-gradient(135deg, #06C755 0%, #04a045 100%);
+    border-color: transparent;
+    color: white;
+  }
+
+  .link-card.highlight .link-card-title { color: white; }
+  .link-card.highlight .link-card-sub { color: rgba(255,255,255,0.75); }
+  .link-card.highlight .link-card-arrow { color: rgba(255,255,255,0.6); }
+  .link-card.highlight .link-card-icon {
+    background: rgba(255,255,255,0.2);
+  }
+
+  .link-card.highlight:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(4, 160, 69, 0.35);
+    border-color: transparent;
+  }
+
+  /* ====== QR CARD ====== */
+  .qr-card {
+    width: 100%;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 10px;
+  }
+
+  .qr-card img {
+    width: 88px;
+    height: 88px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .qr-card-text {}
+  .qr-card-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+  .qr-card-sub {
+    font-size: 0.72rem;
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+
+  /* ====== PRICE BADGE ====== */
+  .price-card {
+    width: 100%;
+    background: var(--mint);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    margin-bottom: 10px;
+  }
+
+  .price-card-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    margin-bottom: 12px;
+  }
+
+  .price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.85rem;
+  }
+
+  .price-row:last-child { border-bottom: none; }
+
+  .price-row-label { color: var(--text-mid); }
+
+  .price-row-value {
+    font-weight: 700;
+    color: var(--mint-dark);
+    font-size: 1rem;
+  }
+
+  /* ====== STORY CARD ====== */
+  .story-card {
+    width: 100%;
+    background: var(--warm-white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 22px;
+    margin-bottom: 10px;
+  }
+
+  .story-card-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--mint-deep);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .story-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--mint-dark);
+    line-height: 1.5;
+    margin-bottom: 14px;
+    padding-left: 12px;
+    border-left: 3px solid var(--mint-mid);
+  }
+
+  .story-text {
+    font-size: 0.82rem;
+    color: var(--text-mid);
+    line-height: 1.9;
+  }
+
+  .story-text p + p { margin-top: 1rem; }
+
+  /* ====== QUAL LIST ====== */
+  .qual-card {
+    width: 100%;
+    background: var(--mint);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    margin-bottom: 10px;
+  }
+
+  .qual-card-label {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    color: var(--mint-dark);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .qual-item {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .qual-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .qual-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 3px;
+  }
+
+  .qual-desc {
+    font-size: 0.74rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+  }
+
+  /* ====== FOOTER ====== */
+  .footer {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    object-fit: cover;
+    opacity: 0.7;
+  }
+
+  .footer-copy {
+    font-size: 0.65rem;
+    color: var(--text-light);
+    margin-top: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- プロフィールヘッダー -->
+  <div class="profile-header">
+    <img src="prof.JPG" alt="ちゃま先生" class="profile-photo">
+    <div>
+      <div class="profile-name-en">SHIRO MORE</div>
+      <div class="profile-name-ja">シロモア｜愛犬の歯みがきサロン</div>
+    </div>
+    <span class="profile-tag">現役歯科衛生士が行う犬の歯みがき</span>
+    <p class="profile-bio">歯科衛生士「ちゃま先生」が、愛犬の歯と口腔健康を丁寧にサポート。東京・千葉・埼玉・神奈川エリアに出張対応いたします。</p>
+  </div>
+
+  <!-- 予約・お問い合わせ -->
+  <div class="section-label">予約・お問い合わせ</div>
+
+  <a href="https://lin.ee/XgnyoBb" class="link-card highlight" target="_blank" rel="noopener">
+    <div class="link-card-icon">
+      <!-- LINE icon -->
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2C6.48 2 2 6.02 2 11c0 2.94 1.49 5.57 3.82 7.28L5 21l3.18-1.67C9.34 19.75 10.65 20 12 20c5.52 0 10-4.02 10-9s-4.48-9-10-9z" fill="white"/>
+        <path d="M8 10.5h1.5M11.5 10.5H13M15 10.5h1.5" stroke="#c05c08" stroke-width="1.5" stroke-linecap="round"/>
+        <text x="6" y="14" font-size="5" fill="#c05c08" font-family="sans-serif" font-weight="bold">LINE</text>
+      </svg>
+    </div>
+    <div class="link-card-text">
+      <div class="link-card-title">LINE で予約・お問い合わせ</div>
+      <div class="link-card-sub">友だち追加して「レッスン希望」とメッセージ</div>
+    </div>
+    <div class="link-card-arrow">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </a>
+
+  <!-- LINE QR -->
+  <div class="qr-card">
+    <img src="https://qr-official.line.me/gs/M_959osybb_GW.png?oat_content=qr" alt="LINE QRコード">
+    <div class="qr-card-text">
+      <div class="qr-card-title">LINEを開いてQRを読み込む</div>
+      <div class="qr-card-sub">
+        友だち追加後、<br>「レッスン希望」とメッセージを<br>お送りください。
+      </div>
+    </div>
+  </div>
+
+  <!-- 公式サイト・SNS -->
+  <div class="section-label">公式サイト・SNS</div>
+
+  <a href="https://shiromore.com" class="link-card" target="_blank" rel="noopener">
+    <div class="link-card-icon orange">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    </div>
+    <div class="link-card-text">
+      <div class="link-card-title">公式ホームページ</div>
+      <div class="link-card-sub">shiromore.com — サービス詳細・料金</div>
+    </div>
+    <div class="link-card-arrow">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </a>
+
+  <a href="https://www.instagram.com/chama_inuhamigaki/" class="link-card" target="_blank" rel="noopener">
+    <div class="link-card-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" color="#c05c08">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+      </svg>
+    </div>
+    <div class="link-card-text">
+      <div class="link-card-title">Instagram</div>
+      <div class="link-card-sub">@chama_inuhamigaki — ケアの様子を発信中</div>
+    </div>
+    <div class="link-card-arrow">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </a>
+
+  <!-- 料金案内 -->
+  <div class="section-label">料金案内</div>
+
+  <div class="price-card">
+    <div class="price-card-title">PRICE</div>
+    <div class="price-row">
+      <span class="price-row-label">初回</span>
+      <span class="price-row-value">16,500円<small style="font-size:0.7rem;font-weight:400;">（税込）</small></span>
+    </div>
+    <div class="price-row">
+      <span class="price-row-label">2回目以降</span>
+      <span class="price-row-value">8,800円<small style="font-size:0.7rem;font-weight:400;">（税込）</small></span>
+    </div>
+  </div>
+
+  <!-- 対応エリア -->
+  <div class="section-label">対応エリア</div>
+
+  <a href="https://shiromore.com#flow" class="link-card" target="_blank" rel="noopener">
+    <div class="link-card-icon orange">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+    </div>
+    <div class="link-card-text">
+      <div class="link-card-title">東京・千葉・埼玉・神奈川（出張対応）</div>
+      <div class="link-card-sub">1都3県のご自宅にお伺いします</div>
+    </div>
+    <div class="link-card-arrow">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </a>
+
+  <!-- なぜこの活動をしているか -->
+  <div class="section-label">この活動を始めた理由</div>
+
+  <div class="story-card">
+    <div class="story-card-label">Our Story</div>
+    <p class="story-quote">「こんなやりかたが<br>あるんだ！」</p>
+    <div class="story-text">
+      <p>歯科衛生士として毎日患者さんの歯を守りながら、自分の愛犬の歯は守れていませんでした。人の口腔ケアを仕事にしているのに、愛犬には毎日歯みがきができていなかった。そのことが、ずっと引っかかっていました。</p>
+      <p>そんなとき、犬の歯みがき専門サロンを初めて訪れました。「毎日やらなきゃいけない、人間と一緒なんだ」「こうやったらいいんだ」——当たり前の事実と正しい方法を目の当たりにして、深く感銘を受けました。</p>
+      <p>SNSには犬の歯みがき情報があふれています。でも、どれが本当に効果的なのか、わからない飼い主さんも多いはず。かつての私がそうでした。</p>
+      <p>あのときの気持ちを、一人でも多くの飼い主さんとわんちゃんへ届けたい。その想いが、SHIRO MORE を始めた理由です。</p>
+    </div>
+  </div>
+
+  <!-- 資格・専門性 -->
+  <div class="qual-card">
+    <div class="qual-card-label">資格・専門性</div>
+    <div class="qual-item">
+      <div class="qual-name">歯科衛生士免許（国家資格）</div>
+      <div class="qual-desc">人の口腔ケアの専門家として現役で活躍中。歯垢・歯石・歯周病に関する正しい知識をそのまま愛犬のケアに活かします。</div>
+    </div>
+    <div class="qual-item">
+      <div class="qual-name">愛玩動物飼養管理士</div>
+      <div class="qual-desc">動物の適切な飼養管理や健康管理に関する知識を保有。わんちゃんの気持ちに寄り添ったレッスンを心がけています。</div>
+    </div>
+    <div class="qual-item">
+      <div class="qual-name">犬の歯みがき専門スクール在学中</div>
+      <div class="qual-desc">より深い専門知識と技術を日々習得中。最新のケア方法をレッスンに反映しています。</div>
+    </div>
+  </div>
+
+  <!-- フッター -->
+  <div class="footer">
+    <img src="logo1.png" alt="SHIRO MORE" class="footer-logo">
+    <p class="footer-copy">&copy; 2025 SHIRO MORE. All rights reserved.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
