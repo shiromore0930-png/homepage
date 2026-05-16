@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SHIRO MORE（シロモア）｜犬の歯みがき出張レッスン</title>
+<title>SHIRO MORE（シロモア）｜愛犬の歯みがき出張レッスン</title>
 <meta name="description" content="現役歯科衛生士のちゃま先生による、愛犬のための出張歯みがきレッスン。東京・千葉・埼玉・神奈川対応。初回モニター6,600円（税込）。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -57,9 +57,21 @@
 
   .logo {
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-icon {
+    height: 40px;
+    width: auto;
+  }
+
+  .logo-text {
+    display: flex;
     flex-direction: column;
     line-height: 1.1;
-    text-decoration: none;
   }
 
   .logo-en {
@@ -861,12 +873,15 @@
   /* ====== FOOTER ====== */
   .footer-inner { max-width: 960px; margin: 0 auto; }
   .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: rgba(255,255,255,0.8);
-    margin-bottom: 0.3rem;
-    letter-spacing: 0.12em;
+    margin-bottom: 0.6rem;
+  }
+
+  .footer-logo img {
+    width: 90px;
+    height: 90px;
+    border-radius: 20px;
+    object-fit: cover;
+    opacity: 0.9;
   }
   .footer-tagline { font-size: 0.75rem; color: rgba(255,255,255,0.5); margin-bottom: 0.4rem; }
   .footer-area { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 1rem; }
@@ -923,8 +938,11 @@
 <!-- HEADER -->
 <header>
   <a href="#" class="logo">
-    <span class="logo-en">SHIRO MORE</span>
-    <span class="logo-ja">シロモア｜犬の歯みがき出張レッスン</span>
+    <img src="logo3.png" alt="" class="logo-icon">
+    <div class="logo-text">
+      <span class="logo-en">SHIRO MORE</span>
+      <span class="logo-ja">シロモア｜愛犬の歯みがき出張レッスン</span>
+    </div>
   </a>
   <nav>
     <a href="#why">なぜ必要？</a>
@@ -1237,8 +1255,8 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">SHIRO MORE</div>
-    <p class="footer-tagline">シロモア｜犬の歯みがき出張レッスン</p>
+    <div class="footer-logo"><img src="logo2.png" alt="SHIRO MORE"></div>
+    <p class="footer-tagline">シロモア｜愛犬の歯みがき出張レッスン</p>
     <p class="footer-area">対応エリア：東京・千葉・埼玉・神奈川</p>
     <div class="footer-links">
       <a href="https://lin.ee/XgnyoBb" target="_blank" rel="noopener">LINE</a>
